@@ -1,7 +1,7 @@
 from typing import Optional
 from translator.pdf_parser import PDFParser
 from translator.writer import Writer
-from translator.translation_chain import TranslationChainGLM
+from translator.translation_chain_glm import TranslationChainGLM
 from utils import LOG
 
 class PDFTranslator:

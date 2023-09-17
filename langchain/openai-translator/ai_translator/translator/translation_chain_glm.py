@@ -2,12 +2,6 @@ from langchain.llms import ChatGLM
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 
-from langchain.prompts.chat import (
-    ChatPromptTemplate,
-    SystemMessagePromptTemplate,
-    HumanMessagePromptTemplate,
-)
-
 from utils import LOG
 
 
@@ -23,7 +17,7 @@ class TranslationChainGLM:
 
         # 待翻译文本由 Human 角色输入
         human_template = """{text}"""
-        human_message_prompt = PromptTemplate(template=human_template, input_vriables=["text"])
+        human_message_prompt = PromptTemplate(template=human_template, input_variables=["text"])
 
         # 为了翻译结果的稳定性，将 temperature 设置为 0
         llm = ChatGLM(endpoint_url=endpoint_url, max_token=8000, top_p=0.9, history=[[system_message_prompt]])
